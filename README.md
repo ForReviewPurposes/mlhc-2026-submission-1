@@ -55,6 +55,6 @@ The full workflow consists of:
 ## Analytics Execution
 1. From repo root folder, run `Rscript pipelines/run_internal_validation.R configs/internal_validation.yaml` (execution time approx. 3-4 mins).
 2. Open configs/survival_analysis.yaml > update `run_dir` with the latest internal validation output folder name.
-3. Open configs/external_validation.yaml > update update `run_dir` with the latest internal validation output folder name.
+3. Open configs/external_validation.yaml > update `run_dir` with the latest internal validation output folder name.
 4. From repo root folder, run `Rscript analysis/internal_validation/run_survival_analysis.R configs/survival_analysis.yaml`
 5. From repo root folder, run `Rscript pipelines/run_external_validation.R configs/external_validation.yaml`
