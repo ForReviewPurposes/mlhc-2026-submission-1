@@ -1,0 +1,32 @@
+run_lookup:
+  run_dir: "outputs/mimic_internal_validation_v1_20260415_093000"
+  outputs_base_dir: "outputs"
+  run_prefix: "mimic_internal_validation_v1_"
+
+data_sources:
+  train_data_path: "data/mimiciv/processed/mimic_clean_train.rds"
+  eval_data_path: "data/mimiciv/processed/mimic_clean_val.rds"
+  eval_label: "val"   # could be "val", "test", "external", "eicu_hospital1", etc.
+
+survival_data:
+  time_to_event_path: "data/mimiciv/mimiciv_ext_icu_cohort_1_timetodeath.csv"
+  severity_scores_path: "data/mimiciv/mimiciv_ext_icu_scores_2.csv"
+  age_col: "anchor_age"
+  duration_col: "duration_hours_from_24h"
+  event_col: "event_after_24h"
+
+benchmarks:
+  include_age: true
+  severity_score_cols: ["apsiii", "lods", "oasis", "sapsii", "sirs", "sofa_24hours"]
+  baseline_score_cols: ["p_nb", "p_rf", "p_rf_llr"]
+
+ddist_bins:
+  breaks: [-Inf, -0.1, 2, Inf]
+  labels: ["Low", "Ambiguous", "High"]
+
+time_roc:
+  hours: [48, 72, 96, 128]
+
+output:
+  subfolder_name: "survival_analysis"
+  preferred_km_method: ""

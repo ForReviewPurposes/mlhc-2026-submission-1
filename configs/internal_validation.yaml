@@ -1,0 +1,69 @@
+run:
+  name: "mimic_internal_validation"
+  mode: "fit_and_score"
+  seed: 42
+
+data:
+  train_data_path: "data/mimiciv/processed/mimic_clean_train.rds"
+  val_data_path: "data/mimiciv/processed/mimic_clean_val.rds"
+  id_col: "stay_id"
+  outcome_col: "mortality"
+
+groups:
+  enabled: true
+  group_map_path: "data/mimiciv/metadata/mimic_group_map.csv"
+  exclude_from_percentiles: ["anchor_age", "gender"]
+  softplus_eps: 1e-12
+  winsor_p: 0.01
+  ecdf_log_eps: 1e-6
+  atypical_threshold: 0.75
+
+
+output:
+  base_dir: "outputs"
+  run_name: "mimic_internal_validation_v1"
+  append_datetime: true
+
+fit:
+  y_col: "mortality"
+  positive: "1"
+  features: null
+
+  laplace: 1
+  raw_min_sd: 1e-8
+  gaussian_min_sd: 1e-6
+  winsor_p: 0.01
+  fraction_eps: 1e-6
+
+  selection_seed: 1
+  selection_val_frac: 0.2
+  trim_frac: 0.01
+
+  min_n_total: 25
+  min_n_per_class: 10
+
+  numeric_candidates: ["gaussian", "lognormal", "gamma"]
+  count_candidates: ["negbinom", "poisson"]
+  fraction_candidates: ["logit_gaussian"]
+
+  min_finite_logpdf_frac: 0.80
+  min_finite_llr_frac: 0.80
+  max_abs_llr_p99: 50
+
+transform:
+  drop_nonfinite_L_cols: true
+  min_L_sd: 1e-4
+  cap_llr: true
+  llr_cap: 50
+
+distance:
+  ridge: 1e-4
+
+risk_bins:
+  breaks: [-Inf, -0.1, 2, Inf]
+  labels: ["low", "ambiguous", "high"]
+
+plots:
+  width: 8.5
+  height: 5.5
+  dpi: 300

@@ -1,0 +1,5 @@
+"risk_bin_primary","n_patients","mean_atypical_group_count","median_atypical_group_count","q25_atypical_group_count","q75_atypical_group_count"
+"Q1",105,2.36190476190476,2,2,3
+"Q2",104,3.53846153846154,3,3,4
+"Q3",104,5.26923076923077,5,4,6
+"Q4",105,7.16190476190476,7,5,9

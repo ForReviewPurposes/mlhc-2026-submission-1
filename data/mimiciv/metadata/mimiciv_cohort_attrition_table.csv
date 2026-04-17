@@ -1,0 +1,6 @@
+﻿1,01_base_all_icustays,94458
+2,02_first_icu_per_subject,65366
+3,03_adult_first_icu,65366
+4,04_has_dischtime,65366
+5,05_reached_24h_landmark,62200
+6,06_final_after_excluding_death_before_24h,62199
