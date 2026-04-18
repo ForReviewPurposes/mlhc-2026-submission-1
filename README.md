@@ -1,4 +1,4 @@
-# Population-Relative Risk via Log-Likelihood Ratios for ICU Risk Stratification
+# Interpretable ICU Risk Characterization in Machine Learning Workflows via Population-Relative Evidence Representation
 
 This repository contains the code used to construct a population-referenced evidence representation from MIMIC-IV, perform internal validation on MIMIC-IV, and evaluate external transfer on eICU without retraining.
 
