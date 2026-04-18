@@ -58,3 +58,17 @@ The full workflow consists of:
 3. Open configs/external_validation.yaml > update `run_dir` with the latest internal validation output folder name.
 4. From repo root folder, run `Rscript analysis/internal_validation/run_survival_analysis.R configs/survival_analysis.yaml`
 5. From repo root folder, run `Rscript pipelines/run_external_validation.R configs/external_validation.yaml`
+
+---
+
+## Outputs
+
+The `outputs/` directory contains representative results from internal validation, survival analysis, and external validation pipelines. These include:
+- Density plots
+- Mortality curves
+- Performance metrics (AUROC/AUPRC)
+- sum\_llr risk quantile tables
+- Feature-group ECDF summary tables (atypical group counts and group\_pos\_sum distribution summaries)
+- Kaplan-Meier plots and survival analysis performance metrics.
+
+Full outputs can be regenerated using the provided workflow.
