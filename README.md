@@ -24,11 +24,11 @@ Access to these datasets must be obtained independently through PhysioNet.
 
 ## Required Packages
 
-here, dplyr, tidyr, purrr, stringr, ggplot2, caret, ranger, naivebayes, pROC, PRROC, survival, survminer, yaml
+here, dplyr, tidyr, purrr, stringr, ggplot2, caret, MASS, ranger, naivebayes, pROC, PRROC, survival, survminer, yaml
 
 install.packages(c(
   "here", "dplyr", "tidyr", "purrr", "stringr", "ggplot2",
-  "caret", "ranger", "naivebayes",
+  "caret", "MASS", "ranger", "naivebayes",
   "pROC", "PRROC", "survival", "survminer", "yaml"
 ))
 
