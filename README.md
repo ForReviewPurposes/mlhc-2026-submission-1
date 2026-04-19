@@ -26,6 +26,12 @@ Access to these datasets must be obtained independently through PhysioNet.
 
 here, dplyr, tidyr, purrr, stringr, ggplot2, caret, ranger, naivebayes, pROC, PRROC, survival, survminer, yaml
 
+install.packages(c(
+  "here", "dplyr", "tidyr", "purrr", "stringr", "ggplot2",
+  "caret", "ranger", "naivebayes",
+  "pROC", "PRROC", "survival", "survminer", "yaml"
+))
+
 ---
 
 ## Repository Workflow
